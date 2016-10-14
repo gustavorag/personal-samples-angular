@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="MathModule">
+<head>
+	<title>Hello World in Angular</title>
+	<script src="./lib/angular.min.js"></script>
+	<script src="./controllers/multipleController.js"></script>
+</head>
+<body>
+	<div>
+		
+		<label for="inputA">Number A:</label>
+		<input id="inputA" type="number" ng-model="valA"/>
+		</br>
+		<label for="inputB">Number B:</label>
+		<input id="inputB" type="number" ng-model="valB"/>
+		</br>
+
+		<p ng-controller='SumeController'>
+		<button ng-click="add(valA, valB)">Add</button>
+		Result:{{result}}
+		</p>
+		<p ng-controller='MultipleController'>
+		<button ng-click="multiple(valA, valB)">Multiple</button>
+		Result:{{result}}
+		</p>
+		</br>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="SimpleModule">
+<head>
+	<title>Hello World in Angular</title>
+	<script src="./lib/angular.min.js"></script>
+	<script src="./controllers/simplemodule.js"></script>
+</head>
+<body ng-controller="ControllerA">
+	<div>
+		
+		<label for="inputA">Number A:</label>
+		<input id="inputA" type="number" ng-model="valA"/>
+		</br>
+		<label for="inputB">Number B:</label>
+		<input id="inputB" type="number" ng-model="valB"/>
+		</br>
+		<button ng-click='add(valA, valB)'>Add</button>
+		</br>
+		<button ng-click='multiple(valA, valB)'>Multiple</button>
+		</br>
+		Result:{{result}}
+
+	</div>
+</body>
+</html>

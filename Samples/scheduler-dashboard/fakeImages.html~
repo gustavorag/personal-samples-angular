@@ -1,0 +1,12 @@
+
+[
+{"name":"LO123212DESREFASD","state":"DOWNLOADED","federationMember":"server.edu.br.lsd.ufcg", "priority":0},
+{"name":"LO12ASBDHABSHDBSA","state":"DOWNLOADED","federationMember":"server.edu.br.lsd.ufcg", "priority":1},
+{"name":"LO123ADBSAHBHWHBE","state":"DOWNLOADED","federationMember":"server.lab10", "priority":2},
+{"name":"L123JAJSDBHBASHDJ","state":"READY","federationMember":"server.edu.br.lsd.ufcg", "priority":3},
+{"name":"L3785HBAHBSHDBBSD","state":"READY","federationMember":"server.edu.br.lsd.ufcg", "priority":4},
+{"name":"L45BDHBAHBJDBJASE","state":"READY","federationMember":"server.edu.br.lsd.ufcg", "priority":1},
+{"name":"L76HBHDWBAHBUBDBB","state":"READY","federationMember":"server.edu.br.lsd.ufcg", "priority":0}
+] 
+
+

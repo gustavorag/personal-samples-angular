@@ -1,0 +1,180 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 10px;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ *TopBar
+ */
+.topBar{
+  display: true;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .topBar {
+    display: none;
+  }
+}
+
+/*
+ *minMenu
+ */
+.minMenu{
+  color: white;
+  display: true;
+  position: fixed;
+  padding-top: 5px;
+  text-align: center;
+  top: 50px;
+  right: 0;
+  left: 60%;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #202020;
+  border-radius: 0 0 25px 25px
+}
+
+@media (min-width: 768px) {
+  .minMenu {
+    display: none;
+  }
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding-top: 6%;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #202020;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 20px;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.monitorItem {
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px !important;
+  padding: 5px;
+  width: 350px;
+  height: 400px;
+  border: 1px solid black;
+}
+
+.iconButton{
+  cursor: hand;
+  cursor: pointer;
+}
+
+.gold{
+  color: #FFD700;
+}
+
+.glyphicon-rounded{
+  border-radius: 50%;
+  border: 10px solid #DAA520;
+  
+  text-align: center;
+  vertical-align: middle;
+}

@@ -1,0 +1,84 @@
+.body { 
+	font-family: "Lucida Sans", sans-serif;
+	background-color: #E0E0E0;
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%;
+
+}
+
+.rightContent, .header, .content, .footer{
+	position: fixed;
+	float:right;
+	background-color: white;
+	border: 1px solid #CCC;
+	margin-left: 13%;
+	width: 84%; 
+}
+.leftBar{
+	padding-top: 5%;
+	text-align: center;
+	position: fixed;
+	background-color: #180000;
+	border: 1px solid #CCC;
+	width: 180px; 
+    height: 100%;
+}
+
+.leffBarItem{
+	color: white;
+	font-weight: bold;
+}
+
+.header {
+	margin-top: 1%;
+    height: 20%;
+}
+
+.content{
+	padding:5px;
+	margin-top: 11%;
+    height: 60%;
+
+}
+.footer{
+	margin-top: 40%;
+    height: 10%;
+}
+
+.content-title{
+	padding:5px;
+	border: 1px solid #CCC;
+	margin-top: 1px;
+	margin-left: 1px;
+	margin-bottom: 1px;
+	width: 15%; 
+	height: 5%;
+	background-color: #F8F8F8;
+	text-align: center;
+}
+
+.iconButton{
+	cursor: hand;
+	cursor: pointer;
+}
+
+.red{
+	color: red;
+}
+
+.glyphicon-rounded{
+	border-radius: 50%;
+	border: 10px solid #500;
+	line-height: 50px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table {
+	position:relative;
+	margin-left: 1px;
+	height: 80%;
+	border: 1px solid #CCC;
+}

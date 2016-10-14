@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="schedulerDashboard">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div class="container-fluid" ng-controller='MonitorController'>
+      <div class="row">
+          <div class="topBar navbar navbar-inverse">
+           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#minMenu" aria-expanded="false" aria-controls="minMenu">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="minMenu" class="minMenu collapse">
+            <p><span class=" glyphicon glyphicon-rounded {{isStarted ? 'glyphicon-refresh' : 'glyphicon-play'}} iconButton gold fontHalfBiggerNormal" ng-click="getSebalImages()"></p>
+            <p class="leffBarItem"> ... </p>
+
+          </div>
+          <div class="col-sx-3 col-sm-2 col-md-1 sidebar">
+            <p><span class=" glyphicon glyphicon-rounded {{isStarted ? 'glyphicon-refresh' : 'glyphicon-play'}} iconButton gold fontHalfBiggerNormal" ng-click="getSebalImages()"></p>
+            <p class="leffBarItem"> {{isStarted ? 'Refresh Images' : 'Start Monitoring'}} </p>
+            <p class="leffBarItem"> ... </p>
+          </div>
+          
+        <div class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-1 main">
+            <h1 class="page-header">Sebal Imagens</h1>
+            
+            <div class="table-responsive" ng-controller="PaginationController">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th>#</th><th>Name</th><th>State</th><th>Member</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="i in sebalImages | offset: currentPage*itemsPerPage | limitTo: itemsPerPage" ng-click="getTaskForImage(i.name)">
+                        <td>{{$index + 1}}</td><td class="selectable">[{{i.name}}]</td><td>{{ i.state}}</td><td>{{i.federationMember }}</td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                    
+                    
+                    </tfoot>
+                </table>
+                    <div align="center">
+                        <ul class="pagination" ng-if='pageCount() > 0' style="display:inline!important;">
+                        <li ng-if='!prevPageDisabled'>
+                          <a href ng-click="prevPage()">
+                            <span >&laquo;</span>
+                          </a>
+                        </li>
+                        <li ng-repeat="n in getPages()" ng-click="setPage(n-1)"><a href >{{n}}</a></li>
+                        <li ng-if='!nextPageDisabled'>
+                          <a href ng-click="nextPage()">
+                            <span>&raquo;</span>
+                          </a>
+                        </li>
+                        </ul>
+                    </div>  
+            </div>
+
+          <h2 class="sub-header">Tasks monitor <span ng-if="actualImage !== ''" 
+            class="glyphicon glyphicon-rounded glyphicon-refresh iconButton fontVerySmall" ng-click="refreshTasks()"></h2> 
+          <h4>
+            <span ng-if="actualImage !== ''" class="panel panel-default">Tasks for Image: {{actualImage}}  </span> 
+          </h4>
+            <div ng-show="warningTasks" class="alert alert-warning">
+                <button type="button" class="close" ng-click="warningTasks=!warningTasks"><span aria-hidden="true">&times;</span></button>
+                No found tasks for image {{actualImage}}. Try again later.
+            </div>
+
+            <div id="taskMonitorContent">
+                <div class="monitorItem" ng-repeat="taskState in tasksStates"> 
+                   <h2><div style="float:left;">{{taskState.state}}</div><div style="float:right;">Total:{{taskState.tasks.length}}</div></h2>
+                    <div class="table-responsive" style="clear:both;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Task ID</th>
+                            <th>Resource ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="task in taskState.tasks" class="fontSlightlySmall">
+                                <td width="2%">{{$index + 1}}</td>
+                                <td width="46%">{{task.taskId}}</td>
+                                <td width="52%">{{task.resourceId == '' ? '--' : task.resourceId}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular/angular-resource.min.js"></script>
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/smart-table/smart-table.min.js"></script>
+    <script src="dashboardApp.js"></script>
+    <script src="./controllers/dashboardControllers.js"></script>
+    <script src="./services/dashboardServices.js"></script>
+    <script src="./css/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

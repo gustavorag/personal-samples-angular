@@ -1,0 +1,38 @@
+var app = angular.module('schedulerDashboard', [
+	'dashboardControllers',
+	'dashboardServices'
+]).config(function($logProvider){
+  $logProvider.debugEnabled(false);
+}).constant("appConfig", {
+	"urlSebalSchedulerService":"http://localhost:9192/sebal-scheduler/",
+	"imageResourcePath":"image/:imgName",
+	"taskResourcePath":"task/:taskId/:varType",
+	"sebalImageResourcePath":"fetcher/image/:taskId/:varType"
+}
+);
+
+//Template for Angular code organization
+//var phonecatApp = angular.module('phonecatApp', [
+//  'ngRoute',
+//  'phonecatAnimations',
+//
+//  'phonecatControllers',
+//  'phonecatFilters',
+//  'phonecatServices'
+//]);
+//
+//phonecatApp.config(['$routeProvider',
+//  function($routeProvider) {
+//    $routeProvider.
+//      when('/phones', {
+//        templateUrl: 'partials/phone-list.html',
+//        controller: 'PhoneListCtrl'
+//      }).
+//      when('/phones/:phoneId', {
+//        templateUrl: 'partials/phone-detail.html',
+//        controller: 'PhoneDetailCtrl'
+//      }).
+//      otherwise({
+//        redirectTo: '/phones'
+//      });
+//  }]);

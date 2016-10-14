@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="dataModule">
+<head>
+	<title>Hello World in Angular</title>
+	<script src="./lib/angular.min.js"></script>
+	<script src="./controllers/dataController.js"></script>
+	
+	<script language="JavaScript">
+
+		function getScope(element){
+			console.log('Getting: '+element);
+			var elementScope = document.getElementById(element);
+			return angular.element(elementScope).scope();
+		}
+
+		function getContact(){
+			var scope = getScope('contactContent');
+			var contact = scope.contact;
+			scope.$apply();
+			alert('Contact : '+JSON.stringify(contact));
+		}
+
+		function calculate(){
+			var scope = getScope('contactContent');
+			var result = scope.calculate(2,3);
+			scope.$apply();
+			alert('Result : '+result);
+		}
+	</script>
+
+</head>
+<body>
+	<div id="contactContent" ng-controller='dataController'>
+		
+		<button onclick='getContact()'>Get Contact</button>
+		<button onclick='calculate()'>Calculate</button>
+
+	</div>
+</body>
+</html>
